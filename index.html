@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>排骨香肠市场调研</title>
-
+    <title>排骨香肠智能化生产项目实地调研</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,276 +11,344 @@
 
         body {
             margin: 0;
-            padding: 0;
-            font-family: "Microsoft YaHei", Arial, sans-serif;
-            background: #f7f4ef;
-            color: #333;
+            font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+            background: #f5f1ec;
+            color: #292929;
+            line-height: 1.85;
         }
 
-        .container {
-            max-width: 720px;
+        .page {
+            width: min(920px, 100%);
             margin: 0 auto;
             background: #ffffff;
             min-height: 100vh;
+            box-shadow: 0 0 24px rgba(0,0,0,.06);
         }
 
-        .header {
-            padding: 40px 25px 30px;
+        .hero {
+            padding: 54px 26px 45px;
             text-align: center;
-            background: #8b2e2e;
-            color: white;
+            background: #8f2d2d;
+            color: #ffffff;
         }
 
-        .header h1 {
+        .hero h1 {
             margin: 0;
-            font-size: 30px;
+            font-size: 34px;
             letter-spacing: 2px;
+            line-height: 1.4;
         }
 
-        .header p {
-            margin-top: 12px;
-            font-size: 15px;
-            opacity: 0.9;
+        .hero p {
+            margin: 12px 0 0;
+            font-size: 16px;
+            opacity: .92;
         }
 
         .section {
-            padding: 28px 24px;
+            padding: 34px 34px;
             border-bottom: 1px solid #eeeeee;
         }
 
         .section h2 {
-            margin-top: 0;
-            color: #7a2626;
-            font-size: 21px;
+            margin: 0 0 18px;
+            color: #842626;
+            font-size: 24px;
+        }
+
+        .section h3 {
+            margin: 22px 0 8px;
+            color: #5f2020;
+            font-size: 18px;
         }
 
         .section p {
+            margin: 10px 0;
             font-size: 16px;
-            line-height: 1.9;
             text-align: justify;
         }
 
-        .main-image {
-            width: 100%;
-            display: block;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .image-title {
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
             margin-top: 10px;
-            text-align: center;
-            color: #777;
-            font-size: 14px;
         }
 
-        .feature-box {
-            background: #faf7f3;
-            border-left: 4px solid #8b2e2e;
-            margin: 12px 0;
+        .info-card {
             padding: 14px 16px;
-            border-radius: 4px;
+            border: 1px solid #eadede;
+            background: #fcf8f6;
+            border-radius: 8px;
         }
 
-        .feature-box strong {
-            color: #7a2626;
-        }
-
-        .survey {
-            padding: 35px 24px 45px;
-            text-align: center;
-        }
-
-        .survey h2 {
-            color: #7a2626;
-        }
-
-        .survey p {
-            line-height: 1.8;
-            color: #666;
-        }
-
-        .survey-button {
+        .info-card strong {
             display: block;
-            width: 85%;
-            max-width: 400px;
-            margin: 25px auto 0;
-            padding: 16px 20px;
-            background: #8b2e2e;
+            color: #842626;
+            margin-bottom: 3px;
+        }
+
+        .steps {
+            counter-reset: step;
+            margin-top: 12px;
+        }
+
+        .step {
+            position: relative;
+            margin: 14px 0;
+            padding: 15px 16px 15px 52px;
+            background: #faf7f4;
+            border-radius: 8px;
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #8f2d2d;
             color: white;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 30px;
+            text-align: center;
+            line-height: 25px;
             font-weight: bold;
         }
 
-        .survey-button:hover {
-            background: #6f2020;
+        .photo {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+            margin-top: 18px;
+        }
+
+        .caption {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .photo-card {
+            margin: 0;
+        }
+
+        .photo-card img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .highlight {
+            padding: 18px 20px;
+            border-left: 4px solid #8f2d2d;
+            background: #faf5f2;
+            margin: 15px 0;
         }
 
         .footer {
-            padding: 20px;
+            padding: 24px;
             text-align: center;
-            color: #999;
+            color: #888;
             font-size: 13px;
-            background: #f5f5f5;
+            background: #f7f5f3;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 680px) {
+            .hero {
+                padding: 40px 20px 34px;
+            }
 
-            .header h1 {
-                font-size: 25px;
+            .hero h1 {
+                font-size: 26px;
             }
 
             .section {
-                padding: 23px 20px;
+                padding: 27px 21px;
+            }
+
+            .section h2 {
+                font-size: 21px;
             }
 
             .section p {
                 font-size: 15px;
             }
+
+            .info-grid,
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-
 </head>
 
 <body>
+<div class="page">
 
-<div class="container">
+    <header class="hero">
+        <h1>排骨香肠智能化生产项目实地调研</h1>
+        <p>走进合作企业 · 学习半自动生产设备 · 推进项目实践落地</p>
+    </header>
 
-    <!-- 顶部标题 -->
-    <div class="header">
+    <section class="section">
+        <h2>调研概况</h2>
 
-        <h1>排骨香肠市场调研</h1>
+        <div class="info-grid">
+            <div class="info-card">
+                <strong>项目组</strong>
+                “排风破浪”
+            </div>
+            <div class="info-card">
+                <strong>调研时间</strong>
+                2026年5月27日 14:00—17:00
+            </div>
+            <div class="info-card">
+                <strong>调研人员</strong>
+                张君阳、李好、董现韵、何俊良
+            </div>
+            <div class="info-card">
+                <strong>调研地点</strong>
+                安能 aneA（金竹西街店），重庆市巴南区鱼洞镇金竹工业园车管所内
+            </div>
+        </div>
+
+        <img src="team.jpg" class="photo" alt="调研团队与合作企业负责人合影">
+        <div class="caption">调研团队与合作企业负责人合影</div>
+    </section>
+
+    <section class="section">
+        <h2>调研目的</h2>
 
         <p>
-            了解传统特色食品 · 倾听消费者真实声音
-        </p>
-
-    </div>
-
-
-    <!-- 产品介绍 -->
-    <div class="section">
-
-        <h2>认识排骨香肠</h2>
-
-        <p>
-            排骨香肠是一种具有地方特色的传统肉制品，
-            将经过处理和调味的排骨装入肠衣，
-            在保留排骨肉质口感的同时，
-            融合传统香肠独特的腌制与加工风味。
-        </p>
-
-        <img
-            src="product.jpg"
-            class="main-image"
-            alt="排骨香肠产品图片"
-        >
-
-        <div class="image-title">
-            排骨香肠产品展示
-        </div>
-
-    </div>
-
-
-    <!-- 产品特点 -->
-    <div class="section">
-
-        <h2>产品特点</h2>
-
-        <div class="feature-box">
-            <strong>特色形态</strong><br>
-            将排骨装入肠衣，区别于普通香肠产品。
-        </div>
-
-        <div class="feature-box">
-            <strong>传统风味</strong><br>
-            保留川渝地区传统腌制、调味及熏制特色。
-        </div>
-
-        <div class="feature-box">
-            <strong>丰富口感</strong><br>
-            同时具有排骨的肉质口感与香肠的复合风味。
-        </div>
-
-    </div>
-
-
-    <!-- 制作展示 -->
-    <div class="section">
-
-        <h2>制作过程</h2>
-
-        <p>
-            从原料处理、和料腌制，到排骨灌装、
-            扎孔排气、打结及后续加工，
-            每一道工序共同形成排骨香肠独特的产品特色。
-        </p>
-
-        <img
-            src="process.jpg"
-            class="main-image"
-            alt="排骨香肠制作过程"
-        >
-
-        <div class="image-title">
-            排骨香肠制作过程展示
-        </div>
-
-    </div>
-
-
-    <!-- 更多图片 -->
-    <div class="section">
-
-        <h2>产品展示</h2>
-
-        <img
-            src="display.jpg"
-            class="main-image"
-            alt="排骨香肠展示"
-        >
-
-        <div class="image-title">
-            排骨香肠实物展示
-        </div>
-
-    </div>
-
-
-    <!-- 调研入口 -->
-    <div class="survey">
-
-        <h2>参与我们的市场调研</h2>
-
-        <p>
-            您的真实意见将帮助我们进一步了解消费者
-            对排骨香肠产品的认知、口味偏好和购买意愿。
+            本次团队前往合作企业开展实地调研，依托双方深度合作关系，
+            重点参观合作企业研发的半自动排骨香肠生产设备。
+            通过现场学习设备操作流程、运行原理与使用规范，
+            进一步熟悉设备性能和实际生产应用情况。
         </p>
 
         <p>
-            本次调研仅用于市场研究，
-            感谢您的支持与参与。
+            同时，团队借助本次交流对接后续工作规划，
+            围绕设备落地、调试使用、工艺适配等内容明确推进方向，
+            梳理双方分工与实施步骤，为后续完善生产方案、
+            推动设备投入量产以及排骨香肠智能化生产项目落地奠定基础。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>调研准备</h2>
+
+        <div class="steps">
+            <div class="step">
+                <strong>对接沟通，确定行程</strong><br>
+                团队提前联系指导老师，由老师对接合作企业负责人，
+                共同协商确定实地调研的具体时间。
+            </div>
+
+            <div class="step">
+                <strong>企业筹备，调试设备</strong><br>
+                合作企业提前完成半自动生产设备的调试与整理，
+                保障团队到场后能够直接参观和体验设备。
+            </div>
+
+            <div class="step">
+                <strong>团队预习，梳理规划</strong><br>
+                团队成员提前学习设备相关理论知识，
+                梳理项目后续工作安排，明确本次调研的学习重点。
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>调研过程</h2>
+
+        <h3>01 设备运行流程现场演示</h3>
+        <p>
+            团队抵达合作企业后，企业负责人首先完整演示了半自动排骨香肠生产设备的整体运行流程，
+            并对各环节的实际生产操作方式进行说明。随后，团队参观生产车间及配套设施，
+            直观了解企业标准化生产模式。
         </p>
 
-        <!-- 后面把这里的网址换成你的问卷星/腾讯问卷链接 -->
-        <a
-            href="#"
-            class="survey-button"
-        >
-            点击填写调研问卷
-        </a>
+        <h3>02 双方开展专项工作交流</h3>
+        <p>
+            参观结束后，双方围绕前期校企合作情况、现阶段项目进度以及存在的问题开展专项交流，
+            并结合设备现状明确下一阶段项目推进任务和具体工作安排。
+        </p>
 
-    </div>
+        <img src="meeting.jpg" class="photo" alt="团队与企业负责人开展专项工作交流">
+        <div class="caption">团队与企业负责人开展专项工作交流</div>
 
+        <h3>03 深入学习半自动生产设备</h3>
+        <p>
+            会议结束后，团队再次返回生产现场，对半自动生产设备进行深入学习，
+            系统了解设备内部工作原理和完整生产工艺流程，并结合实际运行情况分析设备优势与不足，
+            为后续设备优化和工艺改进积累一线资料。
+        </p>
 
-    <div class="footer">
-        排骨香肠市场调研
-    </div>
+        <div class="photo-grid">
+            <figure class="photo-card">
+                <img src="equipment1.jpg" alt="半自动排骨香肠生产设备现场学习">
+                <figcaption class="caption">半自动排骨香肠生产设备现场学习</figcaption>
+            </figure>
+
+            <figure class="photo-card">
+                <img src="equipment2.jpg" alt="团队深入了解设备操作与运行原理">
+                <figcaption class="caption">团队深入了解设备操作与运行原理</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>调研结论</h2>
+
+        <div class="highlight">
+            通过本次实地调研，团队全面认识并掌握了半自动排骨香肠生产设备的运行原理、
+            生产流程及实际操作规范，并进一步了解企业标准化生产车间的作业模式，
+            有效弥补了团队此前理论知识较多、实操经验不足的问题。
+        </div>
+
+        <p>
+            通过与企业负责人的深入交流，团队系统总结了前期合作项目的开展成果和存在不足，
+            明确了下一阶段双方的合作方向、工作分工与推进计划，
+            为项目后续落地提供了更加明确的实践依据。
+        </p>
+
+        <p>
+            同时，通过对设备优缺点的深入探讨，团队进一步掌握了现有半自动设备的性能优势与可优化空间，
+            为后续设备改良、工艺升级、智能化方案优化、降低生产成本和提升生产效率提供了真实可靠的现实依据。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>收获与价值</h2>
+
+        <p>
+            本次实地调研使团队近距离熟悉了半自动生产设备的原理与流程，
+            积累了一线实操经验，补齐了专业实践短板。
+            通过与企业负责人交流，团队进一步理清了项目推进思路，
+            明确了后续工作方向，并加深了双方合作默契。
+        </p>
+
+        <p>
+            此外，对设备优势与不足的客观分析，也为设备优化和工艺改进提供了参考。
+            本次活动将理论知识与生产实践相结合，不仅提升了团队协作与问题分析能力，
+            也为排骨香肠智能化生产项目进一步落地筑牢基础，具有较强的实践意义与应用价值。
+        </p>
+    </section>
+
+    <footer class="footer">
+        项目组“排风破浪” · 2026年5月27日实地调研
+    </footer>
 
 </div>
-
 </body>
 </html>
